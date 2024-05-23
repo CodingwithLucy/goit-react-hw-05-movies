@@ -22,13 +22,13 @@ function Movies() {
   };
 
   return (
-    <div style={{ marginTop: '20px' }}>
+    <div style={{ marginTop: '25px' }}>
       <form onSubmit={handleSearchSubmit}>
         <input
           type="text"
           value={searchTerm}
           onChange={handleSearchChange}
-          style={{ marginLeft: '20px', marginRight: '20px' }}
+          style={{ marginLeft: '25px', marginRight: '25px' }}
         />
         <button type="submit">Szukaj</button>
       </form>

@@ -14,7 +14,7 @@ function Home() {
   }, []);
 
   return (
-    <div>
+    <div style={{ padding: '25px' }}>
       <h1>Trending today</h1>
       <ul>
         {movies.map(movie => (
