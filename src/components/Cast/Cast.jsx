@@ -19,12 +19,19 @@ function Cast() {
   return (
     <div>
       <h1>Cast</h1>
-      {cast.map(member => (
-        <div key={member.cast_id}>
-          <h2>{member.name}</h2>
-          <p>{member.character}</p>
-        </div>
-      ))}
+      <ul>
+        {cast.map(member => (
+          <li key={member.cast_id}>
+            <img
+              src={`https://image.tmdb.org/t/p/w500${member.profile_path}`}
+              alt={member.name}
+              style={{ width: '10%' }}
+            />
+            <h2>{member.name}</h2>
+            <p>{member.character}</p>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
@@ -35,6 +42,7 @@ Cast.propTypes = {
       cast_id: PropTypes.number.isRequired,
       name: PropTypes.string.isRequired,
       character: PropTypes.string,
+      profile_path: PropTypes.string,
     })
   ),
 };

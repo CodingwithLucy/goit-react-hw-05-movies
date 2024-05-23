@@ -1,15 +1,30 @@
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import './Header.css';
 
 function Header() {
+  const [activeLink, setActiveLink] = useState('/');
   return (
-    <header>
+    <header className="header">
       <nav>
-        <ul>
+        <ul className="nav-list">
           <li>
-            <Link to="/">Home</Link>
+            <Link
+              to="/"
+              className={activeLink === '/' ? 'active-link' : ''}
+              onClick={() => setActiveLink('/')}
+            >
+              Home
+            </Link>
           </li>
           <li>
-            <Link to="/movies">Movies</Link>
+            <Link
+              to="/movies"
+              className={activeLink === '/movies' ? 'active-link' : ''}
+              onClick={() => setActiveLink('/movies')}
+            >
+              Movies
+            </Link>
           </li>
         </ul>
       </nav>
